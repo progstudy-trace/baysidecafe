@@ -1,0 +1,511 @@
+@charset "utf-8";
+
+/* スマホ画面（モバイルファースト） */
+
+/* 共通 */
+*{
+  font-family: serif;
+}
+a{
+  text-decoration:none;
+  color:#333;
+  transition:0.5s;
+}
+a:hover{
+  color:#333;
+}
+
+.toppage-h2{
+  text-align: center;
+  margin-bottom:50px;
+  font-size:28px;
+}
+.toppage-h2::first-letter{
+  color:#1e73be;
+  font-size:1.2em;
+}
+
+p{
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+section{
+  padding:50px 10px;
+}
+
+.btn{
+  width:250px;
+  height:30px;
+  background:#1e73be;
+  margin:50px auto 0 auto;
+  text-align: center;
+}
+.btn a{
+  color:#fff;
+  display:block;
+  line-height: 30px;
+  font-size:14px;
+  transition: 0.5s;
+}
+.btn a:hover{
+  background:#8cb5f7;
+}
+
+.pc{
+  display:none;
+}
+
+.fadein {
+  opacity : 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
+
+
+
+
+/* ----------------------------ヘッダー---------------------------- */
+header{
+  background:transparent;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:2;
+  padding:10px 40px;
+}
+
+h1{
+  text-align: center;
+}
+
+h1 img{
+  width:250px;
+  height:auto;
+}
+
+
+/*　ハンバーガーボタン　*/
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 13px;
+  top   : 12px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #fff;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  background :#fff;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  background :#fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+nav.globalnav-sp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  width: 100%;
+  opacity:0;
+  pointer-events: none;
+  transition: opacity 0.6s ease, visibility .6s ease;
+}
+
+nav.globalnav-sp ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalnav-sp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: .4s all;
+}
+nav.globalnav-sp ul li:last-child {
+  padding-bottom: 0;
+}
+nav.globalnav-sp ul li:hover{
+  background :#555;
+}
+
+nav.globalnav-sp ul li a {
+  display: block;
+  color: #fff;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalnav-sp.active {
+  opacity:100;
+  pointer-events: auto;
+}
+.hamburger.transform{
+  background-color:rgba(0,0,0,0.5);
+}
+.logo-hide{
+  display:none;
+}
+
+
+
+
+/* -------------------------------スライドショー--------------------------- */
+.slide{
+  position:relative;
+  height:100vh;
+  overflow: hidden;
+}
+.slide img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  opacity:0;
+  animation:slideshow 24s linear infinite;
+  filter: brightness(70%);
+}
+
+.slide img:nth-child(2){
+  animation-delay:8s;
+}
+.slide img:nth-child(3){
+  animation-delay:16s;
+}
+
+@keyframes slideshow{
+  0%{
+    opacity:0;
+    transform: scale(1);
+  }
+  10%{
+    opacity:1;
+  }
+  28%{
+    opacity:1;
+  }
+  38%{
+    opacity:0;
+    transform: scale(1.1);
+  }
+  100%{
+    opacity:0;
+  }
+}
+
+
+
+
+
+/*--------------------------コンセプト------------------------------ */
+
+.concept img{
+  width:98%;
+  position:relative;
+  left:-10px;
+  z-index: 1;
+}
+
+.concept h3{
+  text-align: center;
+  margin-bottom:30px;
+  font-size:22px;
+}
+
+.concept-txt{
+  background:#f7f6f4;
+  width:98%;
+  padding:60px 30px 40px;
+  margin-left:auto;
+  position:relative;
+  top:-30px;
+  left:10px;
+}
+
+
+/* --------------------------メニュー------------------------------ */
+.menu{
+  background:#f7f6f4;
+}
+.recommend{
+  text-align:center;
+  margin-bottom:20px;
+}
+.menu-item{
+  background:#fff;
+  text-align: center;
+  width:80%;
+  margin:0 auto 25px auto;
+}
+.menu-item img{
+  width:100%;
+}
+.recommend-menu-name{
+  text-align: center;
+  padding-top: 5px;
+  font-weight:bold;
+}
+.menu-txt{
+  padding:10px;
+  font-size:14px;
+  text-align: left;
+}
+
+
+/* ------------------------こだわり------------------------------ */
+.obsession{
+  background:url(../img/obsession-bg.jpg);
+  background-size:cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color:#fff;
+  padding-top:70px;
+  padding-bottom:70px;
+}
+
+.obsession h2{
+  color:#fff;
+  text-align: center;
+  margin-bottom:50px;
+  font-size:28px;
+}
+
+/* -------------------------お知らせ--------------------------- */
+.article-item{
+  width:80%;
+  margin:0 auto 30px auto;
+}
+.article-item-img img{
+  width:100%;
+  margin-bottom:10px;
+}
+.article-item-title{
+  text-align: center;
+  border-bottom:1px solid #ccc;
+  padding-bottom:5px;
+}
+.article-item_meta{
+  display:flex;
+  justify-content: center;
+  padding:5px 0;
+}
+.article-item_meta li{
+  list-style: none;
+  padding:5px;
+}
+.article-item-cat{
+  background:#ddd;
+  border-radius:3px;
+}
+.article-item-date,.article-item-cat,.article-item-txt{
+  font-size:13px;
+}
+
+
+
+/* ------------------------アクセス----------------- */
+.access{
+  background:#f7f6f4;
+}
+.access-wrap iframe{
+  width:100%;
+  height:300px;
+}
+
+.access-txt{
+  margin-top:60px;
+  padding:0 20px;
+}
+
+.reserve-txt{
+  text-align: center;
+  margin-top:50px;
+}
+.reserve-tel{
+  text-align: center;
+  color:#1e73be;
+  font-size:1.2em;
+}
+
+
+/* -------------------------フッター---------------------------- */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#555;
+  color:#fff;
+}
+
+footer img{
+  width:200px;
+  margin-bottom:10px;
+}
+
+footer small{
+  font-size:12px;
+}
+
+
+
+
+/* ---------------固定ページ------------------- */
+.page-title-bg{
+  height:200px;
+  padding-top:130px;
+  background:url(../img/obsession-bg.jpg);
+  background-size:cover;
+  background-position: center center;
+  text-align: center;
+  margin:0;
+  position: relative;
+}
+.page-title-bg::after{
+  content: '';
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.page-title{
+  color:#fff;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  font-size:28px;
+}
+
+
+
+
+
+/* ----------------投稿ページ-------------------- */
+.container{
+  padding:30px 10px;
+}
+.main-contents{
+  margin-bottom:50px;
+}
+
+
+.post-title{
+  font-size:24px;
+  margin-bottom:10px;
+}
+.post-info{
+  margin-bottom:10px;
+}
+.post-cat{
+  margin-left:10px;
+}
+.thumb-img{
+  max-width:100%;
+}
+
+.sidebar-title{
+  font-size:20px;
+  margin-bottom:20px;
+  border-bottom:2px solid #1e73be;
+  padding-bottom:5px;
+}
+
+.sidebar ul{
+  margin-bottom:30px;
+}
+
+.sidebar ul li{
+  list-style: none;
+  margin-bottom:10px;
+}
+
+
+/* -----------------------アーカイブページ------------------- */
+.article-wrap{
+  display:flex;
+  margin-bottom:30px;
+  padding-bottom:20px;
+  border-bottom:1px solid #ccc;
+}
+.archive-left{
+  width:40%;
+  margin-right:20px;
+}
+.archive-right{
+  width:60%;
+}
+.archive-thumb{
+  width:100%;
+}
+.archive-post-title{
+  font-size:20px;
+  margin-bottom:10px;
+}
+.archive-post-info{
+  font-size: 12px;
+  margin-bottom:10px;
+}
+.excerpt{
+  font-size:14px;
+  margin-bottom:10px;
+}
+.more-btn{
+  width:150px;
+  text-align: center;
+  background:#1e73be;
+  margin-left:auto;
+}
+.more-btn a{
+  display:block;
+  color:#fff;
+  transition: 0.6s;
+  font-size:14px;
+  padding:3px;
+}
+
+.more-btn a:hover{
+  background:#8cb5f7;
+}
+

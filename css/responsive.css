@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+/* パソコン画面 */
+
+@media(min-width:678px){
+  /* 共通 */
+  .sp{
+    display:none;
+  }
+  .pc{
+    display:block;
+  }
+
+
+
+  /* ----------------------------ヘッダー---------------------------- */
+header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1{
+  text-align:left;
+}
+
+h1 img{
+  width:250px;
+  height:auto;
+}
+
+/* パソコングローバルナビ */
+.globalnav-pc ul{
+  display:flex;
+  align-items: center;
+}
+.globalnav-pc ul li{
+  text-align: center;
+}
+.globalnav-pc ul li a{
+  color:#fff;
+  display:block;
+  padding:10px;
+}
+.globalnav-pc ul li a:hover{
+  border-bottom:1px solid #fff;
+}
+
+/* このクラスをjQueryで付け外しする */
+header.transform{
+  background-color:rgba(0,0,0,0.5);
+  justify-content: center;
+}
+
+
+
+/*--------------------------コンセプト------------------------------ */
+
+.concept-wrap{
+  display:flex;
+  align-items: flex-start;
+  width:80%;
+  margin:0 auto;
+}
+
+.concept img{
+  width:50%;
+  position:relative;
+  left:25px;
+  z-index: 0;
+}
+
+.concept-txt{
+  width:50%;
+  padding:65px 50px;
+  position:relative;
+  left:-25px;
+  top:50px;
+}
+
+
+/* --------------------------メニュー------------------------------ */
+.menu{
+  margin-top:50px;
+}
+.menu-wrap{
+  display:flex;
+  justify-content: center;
+}
+.menu-item{
+  width:24%;
+  margin:0;
+}
+.menu-item:not(:last-child){
+  margin-right:20px;
+}
+.recommend-menu-name{
+  padding-top: 5px;
+}
+.menu-txt{
+  padding:20px;
+}
+
+
+/* ------------------------こだわり------------------------------ */
+.obsession{
+  padding-top:100px;
+  padding-bottom:100px;
+}
+.obsession-txt{
+  width:85%;
+  line-height: 2;
+  margin:0 auto;
+}
+
+
+/* -------------------------お知らせ--------------------------- */
+.news-wrap{
+  display:flex;
+  justify-content: center;
+}
+.article-item{
+  width:24%;
+  margin:0;
+}
+.article-item:not(:last-child){
+  margin-right:25px;
+}
+.article-item-date,.article-item-cat,.article-item-txt{
+  font-size:14px;
+}
+
+
+/* ------------------------アクセス----------------- */
+
+.access-wrap{
+  display:flex;
+  justify-content: center;
+  width:80%;
+  margin:0 auto;
+}
+.access-wrap iframe{
+  width:50%;
+  height:400px;
+}
+.access-txt{
+  margin-top:60px;
+  margin-left:50px;
+}
+
+
+/* --------------------投稿ページ----------------- */
+.container{
+  display:flex;
+  justify-content: space-between;
+  max-width:1000px;
+  margin:0 auto;
+  padding:50px 20px;
+}
+.main-contents{
+  width:65%;
+  margin-bottom:30px;
+}
+.sidebar{
+  width:25%;
+}
+
+
+
+}
+
+
+
